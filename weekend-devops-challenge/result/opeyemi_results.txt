@@ -1,0 +1,48 @@
+Opeyemi Ogeroju
+
+Scenario 1
+
+The situation was that the Config.yml was restricted, and no one could access it, which denied me permission to create the instruction inside that file.
+
+
+I detected this after getting the error permission denied, i used the command ls -l to verify the permissions given and saw it was --------
+
+I gave permission to the owner to be able to write, read and execute and to the group and others permission to read only ( for flexibility) - 744 code
+
+I  was able to add details to the config file 
+
+I then restricted the access again and tried to check using the cat config.yml to be sure the details added can now be viewed (remember i had restricted access),
+ so I got the access denied log, and i gave permission to the owner to be able to read and write, while the group and others just get to read - 644 before finally denying access again. 
+
+
+
+
+- SCENARIO TWO
+
+issue- There was no permission given to anyone for the secure_data Folder.
+Current Permission was 000 which was owner, group and other had no permission ------------, i got to know this through the command ls -l, which shows permissions.
+
+Effect - I was unable to add the q1_report.csv and q2_report.csv inside that folder.
+
+Solution- I gave the Read(list), write and Execute permission to just the owner since that was who needed it by using the command 
+chmod 700 secure_data
+
+Effect-with this i had permission to see the list of files i had created and also to create more if i wanted to.
+
+
+
+
+
+ISSUE 2
+
+
+The Dummy Key file.
+the Key folder had permissions given to me to read, write and execute however the file inside which was the app.key had restricted permission so i did the 
+
+solution- cd keys, so i can access the keys folder
+and the chmod 700 app_keys.pem so that i can edit inside this by adding the dummy keys as instructed.
+
+Effect- i was able to add the rwx permission for this, which enabled me to create a dummy keys
+
+
+
